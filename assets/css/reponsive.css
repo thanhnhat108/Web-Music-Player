@@ -1,0 +1,26 @@
+/* PC */
+@media (min-width: 1024px){
+    .dashboard{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .btn{
+        font-size: 32px;
+        padding: 12px 18px;
+    }
+
+    .btn-toggle-play{
+        width: 70px;
+        height: 70px;
+    }
+
+    .playlist{
+        margin-top: 440px;
+    }
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+}
