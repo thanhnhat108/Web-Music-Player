@@ -15,6 +15,8 @@ const repeatBtn = $('.btn-repeat')
 
 const playlist = $('.playlist')
 
+const dashboard_bg = $('.dashboard-bg')
+
 const PLAYER_STORAGE_KEY = 'MUSIC_PLAYER'
 
 
@@ -70,6 +72,7 @@ const app = {
             image: './assets/img/thisfar.jpg'
         },
     ],
+    listRandomIndexSong: [],
     setConfig: function(key, value) {
         this.config[key] = value;
         localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
@@ -122,7 +125,7 @@ const app = {
             const newCdWidth = cdWidth - scrollTop
 
             cd.style.width = newCdWidth>0 ? newCdWidth + 'px' : 0
-            cd.style.opacity = newCdWidth / cdWidth
+            // cd.style.opacity = newCdWidth / cdWidth
         }
 
         // Play / Pause song when click
@@ -243,9 +246,13 @@ const app = {
     loadCurrentSong: function(){
         heading.innerText = this.currentSong.name
         cdThumb.style.backgroundImage = `url(${this.currentSong.image})`
+        dashboard_bg.style.backgroundImage = `url(${this.currentSong.image})`
         audio.setAttribute('src', `${this.currentSong.path}`)
         this.setConfig('currentSong', this.currentSong)
         this.setConfig('currentIndex', this.currentIndex)
+
+        //Remove song from listRandomIndexSong when it played
+        this.listRandomIndexSong.splice(this.listRandomIndexSong.indexOf(this.currentIndex), 1)
     },
 
     loadConfig: function(){
@@ -259,13 +266,20 @@ const app = {
        
     },
 
-    RandomSong: function(){
-        
-        let newIndex
-        do {
-            newIndex = Math.floor(Math.random() * this.songs.length)
-        } while (newIndex == this.currentIndex);
+    InitListIndexSong: function(){
+        this.listRandomIndexSong = this.songs.map((song, index) => {
+            return index;
+        })
+    },
 
+    RandomSong: function(){
+        // Bugs: Limit repeated songs when Random Song (done)
+        if (this.listRandomIndexSong.length == 0) {
+            this.InitListIndexSong()
+        }
+        
+        let newIndex = this.listRandomIndexSong[Math.floor(Math.random() * this.listRandomIndexSong.length)]
+        
         this.currentIndex = newIndex
         this.loadCurrentSong()
     },
@@ -291,6 +305,8 @@ const app = {
     start: function(){
         this.loadConfig()
 
+        this.InitListIndexSong()
+
         this.defineProperties()
 
         this.handleEvents()
@@ -298,6 +314,8 @@ const app = {
         this.loadCurrentSong()
 
         this.render()
+
+        
   
     }
 }

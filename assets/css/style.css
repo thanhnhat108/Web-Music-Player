@@ -16,6 +16,7 @@ body {
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: "Poppins", sans-serif;
 }
 
@@ -39,6 +40,23 @@ html {
     top: 0;
     left: 0;
     z-index: 1;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.dashboard-bg{
+    position: absolute;
+    background-image: url('https://cdn.tgdd.vn/Files/2019/01/01/1142002/s8ori_800x600.jpg') ;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.2;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 header{
@@ -68,6 +86,7 @@ header h2{
     width: 100%;
     padding-top: 100%;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
 }
@@ -78,6 +97,7 @@ header h2{
     justify-content: space-around;
     align-items: center;
     padding: 18px 0 24px 0;
+    position: relative;
 }
 
 .btn{
@@ -126,7 +146,7 @@ header h2{
     width: 80%;
     -webkit-appearance: none;
     height: 6px;
-    background: #d3d3d3;
+    background: #464040;
     outline: none;
     opacity: 0.7;
     -webkit-transition: 0.2s;
