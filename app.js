@@ -36,16 +36,16 @@ const app = {
             image: './assets/img/cryingshame.jpg'
         },
         {
-            name: 'Fairy Tail Opening 15',
-            singer: 'Fairy Tail',
-            path: './assets/music/FairyTail Opening 15.mp3',
-            image: './assets/img/fairytail.jpg'
+            name: 'Say Goodbye',
+            singer: 'Unknown Brain ft Marvin Divine',
+            path: './assets/music/Say Goodbye - Unknown Brain ft Marvin Divine.mp3',
+            image: './assets/img/saygoodbye.jpg'
         },
         {
-            name: 'HoriMiya Opening',
-            singer: 'horimiya',
-            path: './assets/music/Horimiya.mp3',
-            image: './assets/img/horimiya.jpg'
+            name: 'Seasons',
+            singer: 'Rival x Cadmium feat Harley Bird',
+            path: './assets/music/Seasons - Rival x Cadmium feat Harley Bird.mp3',
+            image: './assets/img/seasons.jpg'
         },
         {
             name: 'Ngẫu Hứng',
@@ -70,6 +70,18 @@ const app = {
             singer: 'RavenKreyn ft NinoLucarelli',
             path: './assets/music/ThisFar-RavenKreyn+NinoLucarelli.mp3',
             image: './assets/img/thisfar.jpg'
+        },
+        {
+            name: 'Fairy Tail Opening 15',
+            singer: 'Fairy Tail',
+            path: './assets/music/FairyTail Opening 15.mp3',
+            image: './assets/img/fairytail.jpg'
+        },
+        {
+            name: 'HoriMiya Opening',
+            singer: 'horimiya',
+            path: './assets/music/Horimiya.mp3',
+            image: './assets/img/horimiya.jpg'
         },
     ],
     listRandomIndexSong: [],
