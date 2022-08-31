@@ -1,4 +1,4 @@
-# Web-Player-Music
+# Web Music Player
 
 ## Image
 ![VeryGoodBlogApp Landing](.github/screenshots/screenshot1.jpg) ![VeryGoodBlogApp Landing](.github/screenshots/screenshot2.jpg)
